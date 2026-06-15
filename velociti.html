@@ -14,7 +14,8 @@
       theme: {
         extend: {
           colors: {
-            sf: { blue: '#0070D2', navy: '#032D60', cloud: '#56BCD3', ink: '#181818', paper: '#F4F6F9' },
+            sf:       { blue: '#0070D2', navy: '#032D60', cloud: '#56BCD3', ink: '#181818', paper: '#F4F6F9' },
+            velociti: { teal: '#0A6E68', navy: '#1B4F72', red:  '#A61C00', sand: '#F5F1EA' },
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
         },
@@ -45,16 +46,25 @@
     </nav>
   </header>
 
-  <!-- Hero / project header -->
-  <section class="hero bg-gradient-to-br from-sf-navy via-sf-navy to-sf-blue text-white py-20 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <a href="index.html" class="text-sf-cloud text-sm font-medium hover:text-white transition-colors">← Back to portfolio</a>
-      <p class="mt-6 text-sf-cloud font-semibold tracking-widest uppercase text-xs">Salesforce CRM Implementation</p>
+  <!-- Hero with mountain-biking imagery -->
+  <section class="hero relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1800&q=80"
+        alt="Mountain biker riding on a forest trail at golden hour"
+        class="w-full h-full object-cover"
+        loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-br from-velociti-navy/95 via-velociti-navy/80 to-velociti-teal/55"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28 text-white">
+      <a href="index.html" class="text-velociti-teal text-sm font-medium hover:text-white transition-colors">← Back to portfolio</a>
+      <p class="mt-6 text-velociti-red font-semibold tracking-widest uppercase text-xs">Salesforce CRM Implementation</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-extrabold">Velociti Bikes</h1>
-      <p class="mt-3 text-lg text-white/80">Salesforce Analyst / Consultant · Conam Technologies · Apr–May 2026</p>
+      <p class="mt-3 text-lg text-white/85">Salesforce Analyst / Consultant · Conam Technologies · Apr–May 2026</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="https://mchenryspagg.github.io/velociti-bike/" target="_blank" rel="noopener" class="inline-block bg-white text-sf-navy font-semibold px-6 py-2.5 rounded-md hover:bg-sf-cloud hover:text-white transition-colors">View live demo ↗</a>
+        <a href="https://mchenryspagg.github.io/velociti-bike/" target="_blank" rel="noopener" class="inline-block bg-velociti-red text-white font-semibold px-6 py-2.5 rounded-md hover:bg-velociti-teal transition-colors">View live demo ↗</a>
         <a href="https://mchenryspagg.github.io/velociti-bike/#enquire" target="_blank" rel="noopener" class="inline-block bg-white/10 backdrop-blur text-white font-semibold px-6 py-2.5 rounded-md border border-white/30 hover:bg-white/20 transition-colors">Try the Web-to-Lead form ↗</a>
+        <a href="https://docs.google.com/presentation/d/1DGMgXlHb42_UoOSU6Wpzh_twR78dYhlL0dA_CzGprKU/edit?usp=sharing" class="inline-block bg-white text-velociti-navy font-semibold px-6 py-2.5 rounded-md hover:bg-velociti-teal hover:text-white transition-colors">View presentation ↗</a>
       </div>
     </div>
   </section>
@@ -62,7 +72,7 @@
   <!-- The brief -->
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">The brief</h2>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-velociti-navy">The brief</h2>
       <p class="mt-5 text-lg text-gray-700 leading-relaxed">
         Velociti Bikes — a premium retail bicycle shop specialising in high-end mountain bikes and professional repair —
         was experiencing a surge in demand from both walk-in traffic and online inquiries. Sales enquiries and repair
@@ -73,15 +83,31 @@
     </div>
   </section>
 
+  <!-- Visual divider with imagery -->
+  <section class="relative h-48 md:h-64 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=1800&q=80"
+      alt="Mountain bike against a wooded backdrop"
+      class="w-full h-full object-cover"
+      loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-r from-velociti-navy/85 via-velociti-navy/50 to-transparent"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-4xl mx-auto px-6 w-full">
+        <p class="text-velociti-red font-semibold tracking-widest uppercase text-xs">Inside the build</p>
+        <p class="mt-2 text-white text-lg md:text-xl max-w-2xl">Eleven discrete Salesforce capabilities — wired together so the bike shop runs from a single source of truth.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- What I built -->
-  <section class="py-16 bg-sf-paper">
+  <section class="py-16 bg-velociti-sand">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy text-center">What I built</h2>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-velociti-navy text-center">What I built</h2>
 
       <div class="mt-10 space-y-6">
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Integrated company website + customer intake portal</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Integrated company website + customer intake portal</h3>
           <p class="mt-3 text-gray-700">
             Designed and coded a fully integrated company website featuring a native customer intake portal — transitioning the client
             from fragmented, manual record-keeping to a central digital system.
@@ -89,7 +115,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Web-to-Lead automation</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Web-to-Lead automation</h3>
           <p class="mt-3 text-gray-700">
             Engineered an automated Web-to-Lead configuration that funnels website contact inquiries straight into the
             Salesforce <strong>Lead</strong> object, triggering immediate validation and an automated verification message back to the customer.
@@ -97,7 +123,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Web-to-Case ticketing pipeline</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Web-to-Case ticketing pipeline</h3>
           <p class="mt-3 text-gray-700">
             Architected a custom Web-to-Case online booking form that captures real-time technical issues from the website
             directly into the <strong>Case</strong> object, establishing a standardised ticketing pipeline.
@@ -105,7 +131,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Background Lead Assignment Engine — round-robin</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Background Lead Assignment Engine — round-robin</h3>
           <p class="mt-3 text-gray-700">
             Built an advanced background Lead Assignment Engine utilising round-robin routing logic to automatically distribute
             inbound web prospects evenly to active sales queues — eliminating administrative delays and rep cherry-picking.
@@ -113,7 +139,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Record-triggered notification flows</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Record-triggered notification flows</h3>
           <p class="mt-3 text-gray-700">
             Programmed customised, record-triggered notification flows that instantly fire structured email alerts containing
             live record links to the Sales Manager and assigned team members upon prospect intake.
@@ -121,7 +147,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Duplication rules — exact-match email</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Duplication rules — exact-match email</h3>
           <p class="mt-3 text-gray-700">
             Configured multi-tier duplication rules utilising exact-match email variables to identify and flag potential
             duplicate records inside the Lead workspace layout, while allowing manual overrides for validated exceptions.
@@ -129,7 +155,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Data-guard validation rules</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Data-guard validation rules</h3>
           <p class="mt-3 text-gray-700">
             Implemented strict, data-guard validation rules at the UI level to preserve database quality — successfully
             blocking empty description inputs, restricting past-dated open opportunities, and freezing stage progressions
@@ -138,7 +164,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Stage-triggered cross-functional automations</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Stage-triggered cross-functional automations</h3>
           <p class="mt-3 text-gray-700">
             Developed complex, cross-functional record automations that listen to pipeline stages — automatically scheduling
             stage-specific checklist tasks (product demos, negotiation follow-ups) and dynamically creating live Asset records
@@ -147,7 +173,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Role-based data sharing model</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Role-based data sharing model</h3>
           <p class="mt-3 text-gray-700">
             Designed a secure, role-based data sharing model using Org-Wide Defaults (OWDs) and customised user profiles
             (Sales Representative, Service Agent, and Manager) to restrict commercial transaction metrics from support desks,
@@ -156,7 +182,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Multi-object data analytics suite</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Multi-object data analytics suite</h3>
           <p class="mt-3 text-gray-700">
             Constructed a complete data analytics suite by building a matrix of multi-object summaries — including open
             opportunity value matrices by rep, case resolution durations, and open backlog age trackers.
@@ -164,7 +190,7 @@
         </article>
 
         <article class="bg-white rounded-lg border border-gray-200 p-7">
-          <h3 class="text-lg font-bold text-sf-blue">Sales Pipeline, Service &amp; Management Dashboards</h3>
+          <h3 class="text-lg font-bold text-velociti-teal">Sales Pipeline, Service &amp; Management Dashboards</h3>
           <p class="mt-3 text-gray-700">
             Deployed an interactive, executive-ready Sales Pipeline Dashboard combining visual sales funnels, revenue
             forecasting charts, team workload leaderboards, active conversion gauges, and win/loss trend analytics.
@@ -181,35 +207,35 @@
   <!-- Outcomes -->
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">Outcomes</h2>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-velociti-navy">Outcomes</h2>
       <ul class="mt-6 space-y-3 text-gray-700">
-        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Replaced fragmented, manual record-keeping with a centralised digital system spanning sales and service.</li>
-        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Eliminated administrative delays and rep cherry-picking via automated round-robin lead distribution.</li>
-        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Standardised the repair-ticket pipeline so every issue is captured, routed, and resolvable against an SLA.</li>
-        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Gave leadership live executive telemetry — pipeline health, service response, and SLA compliance — without spreadsheet overhead.</li>
-        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Locked down data quality at the UI layer (validation rules) and at the org layer (OWDs + profiles).</li>
+        <li class="flex gap-3"><span class="text-velociti-teal font-bold mt-0.5">✓</span> Replaced fragmented, manual record-keeping with a centralised digital system spanning sales and service.</li>
+        <li class="flex gap-3"><span class="text-velociti-teal font-bold mt-0.5">✓</span> Eliminated administrative delays and rep cherry-picking via automated round-robin lead distribution.</li>
+        <li class="flex gap-3"><span class="text-velociti-teal font-bold mt-0.5">✓</span> Standardised the repair-ticket pipeline so every issue is captured, routed, and resolvable against an SLA.</li>
+        <li class="flex gap-3"><span class="text-velociti-teal font-bold mt-0.5">✓</span> Gave leadership live executive telemetry — pipeline health, service response, and SLA compliance — without spreadsheet overhead.</li>
+        <li class="flex gap-3"><span class="text-velociti-teal font-bold mt-0.5">✓</span> Locked down data quality at the UI layer (validation rules) and at the org layer (OWDs + profiles).</li>
       </ul>
     </div>
   </section>
 
   <!-- Features used -->
-  <section class="py-16 bg-sf-paper">
+  <section class="py-16 bg-velociti-sand">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">Salesforce features used</h2>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-velociti-navy">Salesforce features used</h2>
       <div class="mt-6 flex flex-wrap gap-2">
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Lead object</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Case object</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Web-to-Lead</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Web-to-Case</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Flow Builder</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Validation Rules</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Duplicate Rules</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Assignment Rules</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Org-Wide Defaults</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Profiles &amp; Roles</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Reports</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Dashboards</span>
-        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Assets</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Lead object</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Case object</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Web-to-Lead</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Web-to-Case</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Flow Builder</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Validation Rules</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Duplicate Rules</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Assignment Rules</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Org-Wide Defaults</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Profiles &amp; Roles</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Reports</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Dashboards</span>
+        <span class="bg-white border border-velociti-teal text-velociti-teal text-sm font-medium px-3 py-1.5 rounded-full">Assets</span>
       </div>
     </div>
   </section>
@@ -217,7 +243,7 @@
   <!-- Back -->
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <a href="index.html" class="inline-block bg-sf-blue text-white font-semibold px-7 py-3 rounded-md hover:bg-sf-navy transition-colors">← Back to portfolio</a>
+      <a href="index.html" class="inline-block bg-velociti-red text-white font-semibold px-7 py-3 rounded-md hover:bg-velociti-navy transition-colors">← Back to portfolio</a>
     </div>
   </section>
 

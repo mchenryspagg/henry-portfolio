@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delta Airlines — Data + AI + CRM · Henry Okam</title>
-  <meta name="description" content="Salesforce + Python project for Delta Airlines: custom objects, Experience Cloud customer portal, and a logistic regression model for loyalty prediction." />
+  <title>Delta Airlines — Data Analytics + Salesforce Integration · Henry Okam</title>
+  <meta name="description" content="Two-part Delta Airlines engagement: stakeholder discovery + Salesforce Data Cloud / Einstein / Agent Force integration proposal, plus a Python logistic regression loyalty model on cleaned multi-sheet flier data." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,7 +14,8 @@
       theme: {
         extend: {
           colors: {
-            sf: { blue: '#0070D2', navy: '#032D60', cloud: '#56BCD3', ink: '#181818', paper: '#F4F6F9' },
+            sf:    { blue: '#0070D2', navy: '#032D60', cloud: '#56BCD3', ink: '#181818', paper: '#F4F6F9' },
+            delta: { navy: '#003366', sky:  '#5B9BD5', red:  '#C8102E', mist: '#EAF2F8' },
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
         },
@@ -45,53 +46,247 @@
     </nav>
   </header>
 
-  <!-- Hero / project header -->
-  <section class="hero bg-gradient-to-br from-sf-navy via-sf-navy to-sf-blue text-white py-20 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <a href="index.html" class="text-sf-cloud text-sm font-medium hover:text-white transition-colors">← Back to portfolio</a>
-      <p class="mt-6 text-sf-cloud font-semibold tracking-widest uppercase text-xs">Salesforce · Data + AI + CRM</p>
+  <!-- Hero with Delta-style aviation imagery -->
+  <section class="hero relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=80"
+        alt="Commercial airliner ascending at sunset"
+        class="w-full h-full object-cover"
+        loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-br from-delta-navy/95 via-delta-navy/80 to-delta-sky/60"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28 text-white">
+      <a href="index.html" class="text-delta-sky text-sm font-medium hover:text-white transition-colors">← Back to portfolio</a>
+      <p class="mt-6 text-delta-sky font-semibold tracking-widest uppercase text-xs">Salesforce · Data + AI · Two-Part Engagement</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-extrabold">Delta Airlines</h1>
-      <p class="mt-3 text-lg text-white/80">Preparing for AI as a Salesforce Administrator · Clicked · Oct–Dec 2024</p>
-      <p class="mt-6 text-white/70 max-w-2xl">
-        Custom Salesforce solution for Delta Airlines combining Sales Cloud, Service Cloud, Experience Cloud, and a Python
-        loyalty-prediction model.
+      <p class="mt-3 text-lg text-white/85">Customer Discovery, Integration Proposal &amp; Predictive Loyalty Model · Oct–Dec 2024</p>
+      <p class="mt-6 text-white/80 max-w-2xl">
+        Stakeholder discovery with Delta's Chief Data Officer and Head of Marketing, a Salesforce Data Cloud + Einstein + Agent Force
+        integration proposal, and a Python logistic-regression loyalty model trained on cleaned multi-sheet flier data.
       </p>
     </div>
   </section>
 
-  <!-- Summary -->
-  <section class="py-16 bg-white">
+  <!-- ───────────────────────── CHAPTER 1 ───────────────────────── -->
+  <section class="py-16 md:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">Project summary</h2>
+      <p class="text-delta-red font-semibold tracking-widest uppercase text-xs">Chapter 1</p>
+      <h2 class="mt-2 text-2xl md:text-3xl font-extrabold text-delta-navy">Data Analyst — Loyalty Analytics &amp; Predictive Model</h2>
+      <p class="mt-1 text-sm text-gray-500">Team 17 · 11 November 2024 · Python + Excel</p>
 
-      <div class="mt-8 space-y-6">
+      <p class="mt-6 text-lg text-gray-700 leading-relaxed">
+        Delta's fragmented data landscape — worsened by the 2024 CrowdStrike incident — was hampering customer issue resolution
+        and strategic planning. The brief: centralise the loyalty dataset, surface behavioural patterns, and build a predictive
+        model to anticipate churn.
+      </p>
 
-        <article class="bg-sf-paper rounded-lg p-6">
-          <h3 class="font-bold text-sf-blue">Salesforce Administrator</h3>
-          <ul class="mt-3 space-y-2 text-sm text-gray-700">
-            <li>· Designed custom objects — <strong>Frequent Fliers</strong>, <strong>Flights</strong>, and <strong>Bookings</strong> — aligned to the raw datasets for accurate mapping and integration.</li>
-            <li>· Imported and consolidated 9,000+ customer records via Data Import Wizard, triggers, and Batch Apex — resolving duplicate-entry challenges.</li>
-            <li>· Built a real-time customer interaction portal on <strong>Experience Cloud</strong> with a chatbot for support, flight updates, and frequent-flier engagement.</li>
-            <li>· Configured Service Cloud knowledge articles to enhance case deflection for upgrades and cancellations.</li>
-          </ul>
+      <!-- Data cleaning -->
+      <article class="mt-10 bg-delta-mist rounded-lg p-7 border border-delta-sky/30">
+        <h3 class="text-lg font-bold text-delta-navy">Data cleaning &amp; preparation</h3>
+        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+          <li>· Three raw sheets cleaned in Python (pandas) + Excel: <strong>Frequent Flier Raw</strong> (9,672 × 15), <strong>Flier Upcoming Flights Raw</strong> (15,078 × 15), <strong>3-Month Upcoming Flights Raw</strong></li>
+          <li>· Resolved inconsistent name formats, malformed dates, mistyped airport codes (e.g. <code class="bg-white px-1 rounded">ttt</code> → <code class="bg-white px-1 rounded">TTT</code>), inconsistent time zones (<code class="bg-white px-1 rounded">UTk</code> → <code class="bg-white px-1 rounded">UTC</code>), 10-currency misspellings, invalid flight numbers</li>
+          <li>· Removed <strong>423 duplicates</strong> detected via <code class="bg-white px-1 rounded">Frequent Flier Number</code> + <code class="bg-white px-1 rounded">Most Recent Flight #</code></li>
+          <li>· Standardised types: numeric IDs → strings, Y/N flags → Boolean, bag counts → integer</li>
+        </ul>
+      </article>
+
+      <!-- Descriptive analytics -->
+      <article class="mt-6 bg-white rounded-lg p-7 border border-gray-200">
+        <h3 class="text-lg font-bold text-delta-navy">Descriptive analytics — what the data said</h3>
+        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+          <li>· Lounge usage <strong>~49.8%</strong> — strong perk signal</li>
+          <li>· Top routes led by <strong>ORD → ATL, SEA → DFW, LAX → MIA</strong></li>
+          <li>· Top departing airports: SEA (972), ORD (959), JFK (939); arrivals led by DEN (955), DFW (953), ATL (940)</li>
+          <li>· Inquiry mix: New Flight &gt; Flight Status &gt; Flight Deal &gt; Cancel Flight</li>
+          <li>· <strong>50.2%</strong> of flights delayed; <strong>22.4%</strong> of frequent-flier flights delayed</li>
+          <li>· Upcoming-flight revenue mix: 53.7% flight cost · 29.3% hotel add-on · 17.0% car-rental add-on</li>
+        </ul>
+      </article>
+
+      <!-- Predictive model -->
+      <article class="mt-6 bg-white rounded-lg p-7 border border-gray-200">
+        <h3 class="text-lg font-bold text-delta-navy">Predictive model — logistic regression for loyalty</h3>
+        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+          <li>· Logistic chosen over linear: binary churn outcome, interpretable probability output, alignment with the retention business goal</li>
+          <li>· <strong>Feature importance:</strong> Additional_Service_Rate (top) &gt; Avg_Checked_Bags &gt; Avg_Addon_Spend &gt; Lounge_Usage_Rate &gt; Delay_Rate</li>
+          <li>· Covariance probe of <em>Flight Delayed?</em> vs <em>Add-On Spend</em>: slight negative but not statistically meaningful — flagged as a limitation, not a finding</li>
+        </ul>
+      </article>
+
+      <!-- Recommendations -->
+      <article class="mt-6 bg-white rounded-lg p-7 border border-gray-200">
+        <h3 class="text-lg font-bold text-delta-navy">Recommendations delivered</h3>
+        <ul class="mt-3 space-y-2 text-sm text-gray-700">
+          <li>· Loyalty programmes that incentivise add-on spend + checked bags (the top-importance features)</li>
+          <li>· Active delay-minimisation programme that prioritises frequent fliers</li>
+          <li>· Dynamic pricing across seat class, with competitive benchmarking</li>
+          <li>· Promote ancillary revenue — car rental + hotel — already a material revenue contributor</li>
+        </ul>
+      </article>
+
+      <!-- Tools -->
+      <div class="mt-8">
+        <p class="text-delta-navy font-semibold text-xs tracking-widest uppercase">Tools used</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Python</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">pandas</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Excel</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Google Colab</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Matplotlib / Seaborn</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Logistic Regression</span>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#" class="inline-block bg-delta-navy text-white font-semibold px-6 py-2.5 rounded-md hover:bg-delta-sky transition-colors">View full report ↗</a>
+        <a href="#" class="inline-block bg-white border border-delta-navy text-delta-navy font-semibold px-6 py-2.5 rounded-md hover:bg-delta-mist transition-colors">View Colab notebook ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual divider with imagery -->
+  <section class="relative h-48 md:h-64 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1800&q=80"
+      alt="Aircraft window view above the clouds"
+      class="w-full h-full object-cover"
+      loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-r from-delta-navy/85 via-delta-navy/55 to-transparent"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-4xl mx-auto px-6 w-full">
+        <p class="text-delta-sky font-semibold tracking-widest uppercase text-xs">From numbers to architecture</p>
+        <p class="mt-2 text-white text-lg md:text-xl max-w-2xl">The analytics told us <em>what</em>. The next chapter answered <em>how Delta should respond</em> — with a Salesforce architecture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── CHAPTER 2 ───────────────────────── -->
+  <section class="py-16 md:py-20 bg-delta-mist">
+    <div class="max-w-4xl mx-auto px-6">
+      <p class="text-delta-red font-semibold tracking-widest uppercase text-xs">Chapter 2</p>
+      <h2 class="mt-2 text-2xl md:text-3xl font-extrabold text-delta-navy">Salesforce Customer Discovery &amp; Data + AI Integration Proposal</h2>
+      <p class="mt-1 text-sm text-gray-500">Stakeholder interviews · Solution architecture · Oct–Dec 2024</p>
+
+      <p class="mt-6 text-lg text-gray-700 leading-relaxed">
+        Following stakeholder interviews with Delta's <strong>Chief Data Officer</strong> and <strong>Head of Marketing</strong>, the engagement turned to mapping
+        the operational problems uncovered and proposing a Salesforce-anchored architecture to solve them.
+      </p>
+
+      <!-- Discovery sub-cards -->
+      <h3 class="mt-10 text-lg font-bold text-delta-navy">Discovery — what the stakeholders surfaced</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        <article class="bg-white rounded-lg p-6 border border-delta-sky/30">
+          <p class="text-delta-red font-semibold tracking-widest uppercase text-xs">Data Security &amp; Management</p>
+          <p class="mt-3 text-sm text-gray-700">
+            Complex protocols but no unified data access. Weekly backup flagged as a streamlining bottleneck. Vulnerabilities exposed by the 2024 CrowdStrike incident.
+          </p>
         </article>
 
-        <article class="bg-sf-paper rounded-lg p-6">
-          <h3 class="font-bold text-sf-blue">Data Analyst</h3>
-          <ul class="mt-3 space-y-2 text-sm text-gray-700">
-            <li>· Cleaned and standardised 15,000+ entries in Python — handling missing values, inconsistent formats, and duplicates.</li>
-            <li>· Built a <strong>logistic regression</strong> model to predict customer loyalty using travel frequency and add-on spending; supported targeted loyalty programs and churn reduction.</li>
-            <li>· Identified a 50.2% flight-delay rate via predictive modelling and proposed data-driven optimisations.</li>
-            <li>· Surfaced behavior trends — top-flight routes, frequent-flier preferences, ancillary revenue opportunities — informing marketing strategy.</li>
-          </ul>
+        <article class="bg-white rounded-lg p-6 border border-delta-sky/30">
+          <p class="text-delta-red font-semibold tracking-widest uppercase text-xs">Marketing &amp; Personalisation</p>
+          <p class="mt-3 text-sm text-gray-700">
+            Salesforce Einstein + Agent Force under consideration but underused. Real-time personalisation limited. Disconnected Adobe Campaign, custom CRM, and IBS Software stacks.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 border border-delta-sky/30">
+          <p class="text-delta-red font-semibold tracking-widest uppercase text-xs">Data Silos &amp; Scalability</p>
+          <p class="mt-3 text-sm text-gray-700">
+            Fragmented departmental data prevents a unified customer view. Scaling concerns as customer volume grows.
+          </p>
         </article>
 
       </div>
 
-      <div class="mt-10 bg-sf-paper border border-dashed border-gray-300 rounded-lg p-7 text-center">
-        <p class="text-sf-blue font-semibold tracking-widest uppercase text-xs">Full case study</p>
-        <h3 class="mt-2 text-xl font-bold text-sf-navy">Coming soon</h3>
-        <p class="mt-3 text-sm text-gray-600 max-w-xl mx-auto">A deeper write-up with screenshots, schema diagrams, and the model evaluation is in progress.</p>
+      <!-- Four solution pillars with Read more -->
+      <h3 class="mt-12 text-lg font-bold text-delta-navy">Solution — four pillars</h3>
+      <div class="mt-4 space-y-4">
+
+        <article class="bg-white rounded-lg p-6 border border-gray-200">
+          <p class="text-delta-navy font-bold">1 · Unify Data Systems</p>
+          <p class="mt-2 text-sm text-gray-700">Consolidate all sources into Salesforce <strong>Data Cloud</strong> for a real-time unified customer view.</p>
+          <button type="button" data-readmore-toggle aria-expanded="false" class="mt-3 text-delta-sky font-semibold text-sm hover:underline">Read more ↓</button>
+          <div data-readmore-body hidden class="mt-3 text-sm text-gray-700">
+            <p>Eliminates departmental silos, accelerates operational decision-making, and gives Marketing and Customer Service the same customer profile in real time — so a service issue surfaces in a marketing campaign decision, and vice versa.</p>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 border border-gray-200">
+          <p class="text-delta-navy font-bold">2 · Implement AI-Driven Automation</p>
+          <p class="mt-2 text-sm text-gray-700">Salesforce <strong>Einstein + Agent Force</strong> for real-time personalisation and predictive analytics.</p>
+          <button type="button" data-readmore-toggle aria-expanded="false" class="mt-3 text-delta-sky font-semibold text-sm hover:underline">Read more ↓</button>
+          <div data-readmore-body hidden class="mt-3 text-sm text-gray-700">
+            <p>Powers automated workflows across service + marketing, scales personalised engagement without scaling headcount, and lets marketing campaigns adapt to live signals (delays, cancellations, loyalty tier changes) instead of running on stale batch data.</p>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 border border-gray-200">
+          <p class="text-delta-navy font-bold">3 · Strengthen Data Security &amp; Regulatory Compliance</p>
+          <p class="mt-2 text-sm text-gray-700">Automated compliance monitoring for <strong>GDPR, CCPA, and PCI DSS</strong>.</p>
+          <button type="button" data-readmore-toggle aria-expanded="false" class="mt-3 text-delta-sky font-semibold text-sm hover:underline">Read more ↓</button>
+          <div data-readmore-body hidden class="mt-3 text-sm text-gray-700">
+            <p>Regular security audits, robust access controls (role-based + field-level), and data encryption at rest and in transit — a direct response to the post-CrowdStrike risk picture. Compliance checks built into the deployment pipeline rather than retro-fitted.</p>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg p-6 border border-gray-200">
+          <p class="text-delta-navy font-bold">4 · Integrate Marketing Platforms</p>
+          <p class="mt-2 text-sm text-gray-700">Streamline <strong>Adobe Campaign, custom CRM, and IBS Software</strong> under Salesforce.</p>
+          <button type="button" data-readmore-toggle aria-expanded="false" class="mt-3 text-delta-sky font-semibold text-sm hover:underline">Read more ↓</button>
+          <div data-readmore-body hidden class="mt-3 text-sm text-gray-700">
+            <p>Unified campaign management and targeting, data-driven segmentation, improved campaign effectiveness — and a single source of truth for customer engagement history that informs every downstream channel.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Outcomes + Risks side-by-side -->
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="bg-white rounded-lg p-6 border border-gray-200">
+          <h3 class="text-lg font-bold text-delta-navy">Expected outcomes</h3>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li>· Unified customer profile accessible across departments</li>
+            <li>· Enhanced personalisation across marketing + service channels</li>
+            <li>· Stronger security + ongoing regulatory adherence</li>
+            <li>· Streamlined operations: fewer manual tasks, faster execution</li>
+          </ul>
+        </article>
+        <article class="bg-white rounded-lg p-6 border border-gray-200">
+          <h3 class="text-lg font-bold text-delta-navy">Risks &amp; mitigations</h3>
+          <ul class="mt-3 space-y-2 text-sm text-gray-700">
+            <li>· <em>Adoption resistance</em> → comprehensive training + change-management programme</li>
+            <li>· <em>Migration downtime</em> → phased rollout with pilot testing</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Sustainability angle -->
+      <article class="mt-6 bg-delta-navy text-white rounded-lg p-6">
+        <p class="text-delta-sky font-semibold tracking-widest uppercase text-xs">Bonus angle</p>
+        <p class="mt-2 text-sm text-white/90"><strong>Sustainable customer engagement:</strong> Salesforce integration used to fold a carbon-offset option into the loyalty programme.</p>
+      </article>
+
+      <!-- Tools -->
+      <div class="mt-8">
+        <p class="text-delta-navy font-semibold text-xs tracking-widest uppercase">Tools used</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Salesforce Data Cloud</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Einstein</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Agent Force</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Service Cloud</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Master Data Management</span>
+          <span class="bg-white border border-delta-navy text-delta-navy text-sm font-medium px-3 py-1.5 rounded-full">Stakeholder Interviews</span>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://docs.google.com/presentation/d/1uxC2Zld_VnKu9yMH89rc9IifMDf3EYpC1MC6ioLxxfQ/edit?usp=sharing" class="inline-block bg-delta-navy text-white font-semibold px-6 py-2.5 rounded-md hover:bg-delta-sky transition-colors">View Data & AI integration Challenges ↗</a>
+        <a href="https://docs.google.com/presentation/d/1dvpXkQP_qo6VpmoeOKKs01u0Ehq7hfYB/edit?usp=sharing&ouid=104522032333493932576&rtpof=true&sd=true" class="inline-block bg-white border border-delta-navy text-delta-navy font-semibold px-6 py-2.5 rounded-md hover:bg-delta-mist transition-colors">View Data & AI integration proposal ↗</a>
       </div>
     </div>
   </section>
@@ -99,7 +294,7 @@
   <!-- Back -->
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <a href="index.html" class="inline-block bg-sf-blue text-white font-semibold px-7 py-3 rounded-md hover:bg-sf-navy transition-colors">← Back to portfolio</a>
+      <a href="index.html" class="inline-block bg-delta-navy text-white font-semibold px-7 py-3 rounded-md hover:bg-delta-sky transition-colors">← Back to portfolio</a>
     </div>
   </section>
 
@@ -120,6 +315,22 @@
     if (new URLSearchParams(window.location.search).get('embed') === '1') {
       document.body.dataset.embed = '1';
     }
+    // Read-more toggles for the four pillars
+    document.querySelectorAll('[data-readmore-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var body = btn.parentElement.querySelector('[data-readmore-body]');
+        if (!body) return;
+        if (body.hasAttribute('hidden')) {
+          body.removeAttribute('hidden');
+          btn.textContent = 'Show less ↑';
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          body.setAttribute('hidden', '');
+          btn.textContent = 'Read more ↓';
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   </script>
 </body>
 </html>

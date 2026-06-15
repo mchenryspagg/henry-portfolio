@@ -21,6 +21,8 @@
               ink:   '#181818',
               paper: '#F4F6F9',
             },
+            velociti: { teal: '#0A6E68', navy: '#1B4F72', red: '#A61C00' },
+            delta:    { navy: '#003366', sky:  '#5B9BD5', red: '#C8102E', mist: '#EAF2F8' },
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
         },
@@ -118,19 +120,27 @@
         <p class="mt-3 text-gray-600">End-to-end Salesforce implementations and data engagements.</p>
       </div>
 
-      <!-- Featured: Velociti -->
+      <!-- Featured: Velociti (Velociti palette + bike imagery) -->
       <article class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden md:flex">
-        <div class="md:w-2/5 bg-gradient-to-br from-sf-navy to-sf-blue p-8 md:p-10 text-white flex flex-col justify-between">
-          <div>
-            <p class="text-sf-cloud font-semibold tracking-widest uppercase text-xs">Featured · Salesforce CRM</p>
-            <h3 class="mt-3 text-2xl md:text-3xl font-extrabold">Velociti Bikes</h3>
-            <p class="mt-2 text-white/80 text-sm">Salesforce Analyst / Consultant · Conam Technologies · Apr–May 2026</p>
-          </div>
-          <div class="mt-8 flex flex-wrap gap-2">
-            <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Web-to-Lead</span>
-            <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Web-to-Case</span>
-            <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Flow Builder</span>
-            <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Dashboards</span>
+        <div class="md:w-2/5 relative min-h-[260px] md:min-h-0">
+          <img
+            src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1200&q=80"
+            alt="Mountain biker on a forest trail at golden hour"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-br from-velociti-navy/85 via-velociti-navy/65 to-velociti-teal/50"></div>
+          <div class="relative p-8 md:p-10 text-white flex flex-col justify-between h-full">
+            <div>
+              <p class="text-velociti-red font-semibold tracking-widest uppercase text-xs">Featured · Salesforce CRM</p>
+              <h3 class="mt-3 text-2xl md:text-3xl font-extrabold">Velociti Bikes</h3>
+              <p class="mt-2 text-white/85 text-sm">Salesforce Analyst / Consultant · Conam Technologies · Apr–May 2026</p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-2">
+              <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Web-to-Lead</span>
+              <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Web-to-Case</span>
+              <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Flow Builder</span>
+              <span class="bg-white/15 text-white text-xs font-medium px-3 py-1 rounded-full">Dashboards</span>
+            </div>
           </div>
         </div>
         <div class="md:w-3/5 p-8 md:p-10">
@@ -139,13 +149,13 @@
             into a centralised digital system with automated web intake, intelligent lead routing, and executive-ready dashboards.
           </p>
           <ul class="mt-5 space-y-2 text-sm text-gray-700">
-            <li class="flex gap-2"><span class="text-sf-blue font-bold">›</span> Automated Web-to-Lead + Web-to-Case intake feeding the Lead and Case objects with validation and verification</li>
-            <li class="flex gap-2"><span class="text-sf-blue font-bold">›</span> Background round-robin Lead Assignment Engine eliminating administrative delays and rep cherry-picking</li>
-            <li class="flex gap-2"><span class="text-sf-blue font-bold">›</span> Sales Pipeline, Service, and Management Dashboards replacing manual spreadsheet tracking</li>
+            <li class="flex gap-2"><span class="text-velociti-teal font-bold">›</span> Automated Web-to-Lead + Web-to-Case intake feeding the Lead and Case objects with validation and verification</li>
+            <li class="flex gap-2"><span class="text-velociti-teal font-bold">›</span> Background round-robin Lead Assignment Engine eliminating administrative delays and rep cherry-picking</li>
+            <li class="flex gap-2"><span class="text-velociti-teal font-bold">›</span> Sales Pipeline, Service, and Management Dashboards replacing manual spreadsheet tracking</li>
           </ul>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="velociti.html" class="inline-block bg-sf-blue text-white font-semibold px-6 py-2.5 rounded-md hover:bg-sf-navy transition-colors">View case study →</a>
-            <a href="https://mchenryspagg.github.io/velociti-bike/" target="_blank" rel="noopener" class="inline-block bg-white border border-sf-blue text-sf-blue font-semibold px-6 py-2.5 rounded-md hover:bg-sf-paper transition-colors">View live demo ↗</a>
+            <a href="velociti.html" class="inline-block bg-velociti-teal text-white font-semibold px-6 py-2.5 rounded-md hover:bg-velociti-navy transition-colors">View case study →</a>
+            <a href="https://mchenryspagg.github.io/velociti-bike/" target="_blank" rel="noopener" class="inline-block bg-white border border-velociti-teal text-velociti-teal font-semibold px-6 py-2.5 rounded-md hover:bg-velociti-teal hover:text-white transition-colors">View live demo ↗</a>
           </div>
         </div>
       </article>
@@ -153,15 +163,28 @@
       <!-- Other projects grid -->
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <article class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-          <p class="text-sf-blue font-semibold tracking-widest uppercase text-xs">Salesforce · Data + AI</p>
-          <h3 class="mt-2 text-xl font-bold text-sf-navy">Delta Airlines — Loyalty &amp; CRM</h3>
-          <p class="mt-1 text-sm text-gray-500">Clicked · Oct–Dec 2024</p>
-          <p class="mt-4 text-sm text-gray-700">
-            Custom Salesforce solution for Delta — custom objects (Frequent Fliers, Flights, Bookings), 9,000+ record imports via Apex,
-            Experience Cloud customer portal with chatbot, and a Python logistic regression for loyalty prediction.
-          </p>
-          <a href="delta.html" class="mt-5 inline-block text-sf-blue font-semibold text-sm hover:underline">Read more →</a>
+        <article class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+          <div class="relative h-40">
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80"
+              alt="Commercial airliner ascending"
+              class="w-full h-full object-cover"
+              loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-r from-delta-navy/80 to-delta-navy/20"></div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-delta-red font-semibold tracking-widest uppercase text-xs">Salesforce · Data + AI · Two-Part</p>
+            <h3 class="mt-2 text-xl font-bold text-delta-navy">Delta Airlines</h3>
+            <p class="mt-1 text-sm text-gray-500">Clicked · Oct–Dec 2024</p>
+            <p class="mt-4 text-sm text-gray-700 flex-1">
+              Two-part engagement: stakeholder discovery with the Chief Data Officer + Head of Marketing leading to a Salesforce Data Cloud + Einstein + Agent Force integration proposal, plus a Python logistic-regression loyalty model trained on cleaned multi-sheet flier data.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="bg-delta-mist text-delta-navy text-xs font-medium px-2.5 py-1 rounded-full">Salesforce</span>
+              <span class="bg-delta-mist text-delta-navy text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
+            </div>
+            <a href="delta.html" class="mt-5 inline-block text-delta-navy font-semibold text-sm hover:underline">Read case study →</a>
+          </div>
         </article>
 
         <article class="bg-white rounded-xl border border-dashed border-gray-300 p-6 flex flex-col items-center justify-center text-center">
@@ -260,10 +283,9 @@
       <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
         <a href="mailto:hnry_ugo@yahoo.com" class="bg-white text-sf-navy font-semibold py-3 px-4 rounded-md hover:bg-sf-cloud hover:text-white transition-colors">📧 Email</a>
         <a href="https://wa.me/2348063706531?text=Hello" class="bg-white/10 border border-white/30 text-white font-semibold py-3 px-4 rounded-md hover:bg-white/20 transition-colors">💬 WhatsApp Us</a>
-        <a href="https://linkedin.com/in/henryokam" class="bg-white/10 border border-white/30 text-white font-semibold py-3 px-4 rounded-md hover:bg-white/20 transition-colors">in LinkedIn</a>
+        <a href="https://www.linkedin.com/in/henry-okam" class="bg-white/10 border border-white/30 text-white font-semibold py-3 px-4 rounded-md hover:bg-white/20 transition-colors">in LinkedIn</a>
         <a href="https://www.salesforce.com/trailblazer/henryokam" class="bg-white/10 border border-white/30 text-white font-semibold py-3 px-4 rounded-md hover:bg-white/20 transition-colors">⚡ Trailblazer</a>
       </div>
-      <p class="mt-8 text-xs text-white/50">Update the LinkedIn / Trailblazer / GitHub links in the README go-live checklist.</p>
     </div>
   </section>
 
