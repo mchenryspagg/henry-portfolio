@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velociti Bikes — Salesforce CRM Implementation · Henry Okam</title>
+  <meta name="description" content="End-to-end Salesforce CRM implementation for Velociti Bikes: Web-to-Lead and Web-to-Case intake, round-robin assignment, validation guardrails, role-based sharing, and executive dashboards." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sf: { blue: '#0070D2', navy: '#032D60', cloud: '#56BCD3', ink: '#181818', paper: '#F4F6F9' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    body[data-embed="1"] .nav,
+    body[data-embed="1"] .footer { display: none !important; }
+    body[data-embed="1"] .hero { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  </style>
+</head>
+<body class="bg-white text-sf-ink antialiased">
+
+  <!-- Nav -->
+  <header class="nav sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-lg font-extrabold tracking-widest text-sf-navy">HENRY OKAM</a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="index.html#about" class="hover:text-sf-blue transition-colors">About</a></li>
+        <li><a href="index.html#projects" class="text-sf-blue font-semibold">Projects</a></li>
+        <li><a href="index.html#skills" class="hover:text-sf-blue transition-colors">Skills</a></li>
+        <li><a href="index.html#contact" class="bg-sf-blue text-white px-4 py-2 rounded-md hover:bg-sf-navy transition-colors">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="md:hidden bg-sf-blue text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero / project header -->
+  <section class="hero bg-gradient-to-br from-sf-navy via-sf-navy to-sf-blue text-white py-20 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="index.html" class="text-sf-cloud text-sm font-medium hover:text-white transition-colors">← Back to portfolio</a>
+      <p class="mt-6 text-sf-cloud font-semibold tracking-widest uppercase text-xs">Salesforce CRM Implementation</p>
+      <h1 class="mt-3 text-4xl md:text-5xl font-extrabold">Velociti Bikes</h1>
+      <p class="mt-3 text-lg text-white/80">Salesforce Analyst / Consultant · Conam Technologies · Apr–May 2026</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://mchenryspagg.github.io/velociti-bike/" target="_blank" rel="noopener" class="inline-block bg-white text-sf-navy font-semibold px-6 py-2.5 rounded-md hover:bg-sf-cloud hover:text-white transition-colors">View live demo ↗</a>
+        <a href="https://mchenryspagg.github.io/velociti-bike/#enquire" target="_blank" rel="noopener" class="inline-block bg-white/10 backdrop-blur text-white font-semibold px-6 py-2.5 rounded-md border border-white/30 hover:bg-white/20 transition-colors">Try the Web-to-Lead form ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The brief -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">The brief</h2>
+      <p class="mt-5 text-lg text-gray-700 leading-relaxed">
+        Velociti Bikes — a premium retail bicycle shop specialising in high-end mountain bikes and professional repair —
+        was experiencing a surge in demand from both walk-in traffic and online inquiries. Sales enquiries and repair
+        tickets had grown beyond what manual record-keeping could handle. The mandate: move from fragmented, manual
+        processes to a centralised digital system that captures every customer interaction, routes it intelligently,
+        and surfaces operational health to leadership in real time.
+      </p>
+    </div>
+  </section>
+
+  <!-- What I built -->
+  <section class="py-16 bg-sf-paper">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy text-center">What I built</h2>
+
+      <div class="mt-10 space-y-6">
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Integrated company website + customer intake portal</h3>
+          <p class="mt-3 text-gray-700">
+            Designed and coded a fully integrated company website featuring a native customer intake portal — transitioning the client
+            from fragmented, manual record-keeping to a central digital system.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Web-to-Lead automation</h3>
+          <p class="mt-3 text-gray-700">
+            Engineered an automated Web-to-Lead configuration that funnels website contact inquiries straight into the
+            Salesforce <strong>Lead</strong> object, triggering immediate validation and an automated verification message back to the customer.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Web-to-Case ticketing pipeline</h3>
+          <p class="mt-3 text-gray-700">
+            Architected a custom Web-to-Case online booking form that captures real-time technical issues from the website
+            directly into the <strong>Case</strong> object, establishing a standardised ticketing pipeline.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Background Lead Assignment Engine — round-robin</h3>
+          <p class="mt-3 text-gray-700">
+            Built an advanced background Lead Assignment Engine utilising round-robin routing logic to automatically distribute
+            inbound web prospects evenly to active sales queues — eliminating administrative delays and rep cherry-picking.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Record-triggered notification flows</h3>
+          <p class="mt-3 text-gray-700">
+            Programmed customised, record-triggered notification flows that instantly fire structured email alerts containing
+            live record links to the Sales Manager and assigned team members upon prospect intake.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Duplication rules — exact-match email</h3>
+          <p class="mt-3 text-gray-700">
+            Configured multi-tier duplication rules utilising exact-match email variables to identify and flag potential
+            duplicate records inside the Lead workspace layout, while allowing manual overrides for validated exceptions.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Data-guard validation rules</h3>
+          <p class="mt-3 text-gray-700">
+            Implemented strict, data-guard validation rules at the UI level to preserve database quality — successfully
+            blocking empty description inputs, restricting past-dated open opportunities, and freezing stage progressions
+            unless contract values are explicitly entered.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Stage-triggered cross-functional automations</h3>
+          <p class="mt-3 text-gray-700">
+            Developed complex, cross-functional record automations that listen to pipeline stages — automatically scheduling
+            stage-specific checklist tasks (product demos, negotiation follow-ups) and dynamically creating live Asset records
+            the moment a deal hits <strong>Closed Won</strong>.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Role-based data sharing model</h3>
+          <p class="mt-3 text-gray-700">
+            Designed a secure, role-based data sharing model using Org-Wide Defaults (OWDs) and customised user profiles
+            (Sales Representative, Service Agent, and Manager) to restrict commercial transaction metrics from support desks,
+            and internal care logs from sales personnel.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Multi-object data analytics suite</h3>
+          <p class="mt-3 text-gray-700">
+            Constructed a complete data analytics suite by building a matrix of multi-object summaries — including open
+            opportunity value matrices by rep, case resolution durations, and open backlog age trackers.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-lg border border-gray-200 p-7">
+          <h3 class="text-lg font-bold text-sf-blue">Sales Pipeline, Service &amp; Management Dashboards</h3>
+          <p class="mt-3 text-gray-700">
+            Deployed an interactive, executive-ready Sales Pipeline Dashboard combining visual sales funnels, revenue
+            forecasting charts, team workload leaderboards, active conversion gauges, and win/loss trend analytics.
+            Built and launched a dedicated Service Dashboard and a high-level Management Dashboard to replace manual
+            spreadsheet tracking with live visual telemetry on support desk response health, SLA compliance, and team
+            performance.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">Outcomes</h2>
+      <ul class="mt-6 space-y-3 text-gray-700">
+        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Replaced fragmented, manual record-keeping with a centralised digital system spanning sales and service.</li>
+        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Eliminated administrative delays and rep cherry-picking via automated round-robin lead distribution.</li>
+        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Standardised the repair-ticket pipeline so every issue is captured, routed, and resolvable against an SLA.</li>
+        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Gave leadership live executive telemetry — pipeline health, service response, and SLA compliance — without spreadsheet overhead.</li>
+        <li class="flex gap-3"><span class="text-sf-blue font-bold mt-0.5">✓</span> Locked down data quality at the UI layer (validation rules) and at the org layer (OWDs + profiles).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Features used -->
+  <section class="py-16 bg-sf-paper">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-sf-navy">Salesforce features used</h2>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Lead object</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Case object</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Web-to-Lead</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Web-to-Case</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Flow Builder</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Validation Rules</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Duplicate Rules</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Assignment Rules</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Org-Wide Defaults</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Profiles &amp; Roles</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Reports</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Dashboards</span>
+        <span class="bg-white border border-sf-blue text-sf-blue text-sm font-medium px-3 py-1.5 rounded-full">Assets</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="index.html" class="inline-block bg-sf-blue text-white font-semibold px-7 py-3 rounded-md hover:bg-sf-navy transition-colors">← Back to portfolio</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-white border-t border-gray-100 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <p>&copy; <span id="year"></span> Henry Okam. Lagos, Nigeria.</p>
+      <p class="flex gap-6">
+        <a href="index.html#about" class="hover:text-sf-blue transition-colors">About</a>
+        <a href="index.html#projects" class="hover:text-sf-blue transition-colors">Projects</a>
+        <a href="index.html#contact" class="hover:text-sf-blue transition-colors">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (new URLSearchParams(window.location.search).get('embed') === '1') {
+      document.body.dataset.embed = '1';
+    }
+  </script>
+</body>
+</html>
